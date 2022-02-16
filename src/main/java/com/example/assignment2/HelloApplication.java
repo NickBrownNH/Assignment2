@@ -15,6 +15,7 @@ public class HelloApplication extends Application {
         stage.setTitle("Encoder: Cipher Creator");
         stage.setScene(scene);
         stage.show();
+
     }
 
     public static void main(String[] args) {

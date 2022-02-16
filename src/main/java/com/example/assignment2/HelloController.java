@@ -1,14 +1,52 @@
 package com.example.assignment2;
+import java.net.URL;
+import java.util.ResourceBundle;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
+import javafx.fxml.Initializable;
+import javafx.scene.control.TextField;
+import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 
-public class HelloController {
+
+
+public class HelloController implements Initializable {
     @FXML
-    private Label welcomeText;
+    private TextField inputText;
 
     @FXML
-    protected void onHelloButtonClick() {
-        welcomeText.setText("Welcome to JavaFX Application!");
+    private TextField inputNumber;
+
+    @FXML
+    public TextField getInputNumber() {
+        return inputNumber;
     }
+
+    @FXML
+    public TextField getInputText() {
+        System.out.println(inputNumber);
+        return inputNumber;
+    }
+
+
+    @FXML
+    protected void onTextTyped()  {
+        System.out.println(inputNumber);
+    }
+
+
+
+
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        this.onTextTyped();
+
+    }
+
+    public void Main(String[] args) {
+        onTextTyped();
+    }
+
+
 }
