@@ -5,6 +5,7 @@ import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TextField;
+import javafx.scene.text.Text;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 
@@ -12,40 +13,23 @@ import javafx.scene.control.Button;
 
 public class HelloController implements Initializable {
     @FXML
-    private TextField inputText;
+    public TextField inputText;
 
     @FXML
-    private TextField inputNumber;
-
-    @FXML
-    public TextField getInputNumber() {
-        return inputNumber;
-    }
-
-    @FXML
-    public TextField getInputText() {
-        System.out.println(inputNumber);
-        return inputNumber;
-    }
+    public Text outputOneShiftText;
 
 
     @FXML
     protected void onTextTyped()  {
-        System.out.println(inputNumber);
+        System.out.println(inputText.getText());
+        outputOneShiftText.setText(inputText.getText());
     }
-
-
 
 
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        this.onTextTyped();
 
-    }
-
-    public void Main(String[] args) {
-        onTextTyped();
     }
 
 
