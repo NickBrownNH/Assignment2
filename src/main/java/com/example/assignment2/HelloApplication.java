@@ -20,5 +20,9 @@ public class HelloApplication extends Application {
 
     public static void main(String[] args) {
         launch();
+        int i = 0;
+        System.out.println(Character.isAlphabetic(';'));
+
+
     }
 }

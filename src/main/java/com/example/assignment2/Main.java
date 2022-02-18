@@ -6,6 +6,9 @@ public class Main {
         int i = 0;
         System.out.println(Character.isAlphabetic(';'));
 
+        ShiftNCipher p1 = new ShiftNCipher();
+
+        p1.encode("abcdefghijklmnopqrstuvwxyz");
 
     }
 
