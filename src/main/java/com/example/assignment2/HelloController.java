@@ -18,6 +18,12 @@ public class HelloController implements Initializable {
     public Text outputOneShiftText;
 
     @FXML
+    public TextField inputShifts;
+
+    @FXML
+    public Text outputMultipleShiftsText;
+
+    @FXML
     protected void onTextTyped()  {
         System.out.println(inputText.getText());
        // outputOneShiftText.setText(inputText.getText());
@@ -28,14 +34,32 @@ public class HelloController implements Initializable {
     }
 
     @FXML
+    protected void onShiftsTyped()  {
+        System.out.println(inputShifts.getText());
+        // outputOneShiftText.setText(inputText.getText());
+
+        ShiftNCipher nC = new ShiftNCipher();
+
+        setOutputTextTwo(nC.ShiftNCipher(1,getInputTextTwo()));
+    }
+
+    @FXML
     public String getInputText() {
         return inputText.getText();
+    }
+
+    @FXML
+    public String getInputTextTwo() {
+        return inputShifts.getText();
     }
 
     @FXML
     public void setOutputText(String newText) {
         outputOneShiftText.setText(newText);
     }
+
+    @FXML
+    public void setOutputTextTwo (String newText) { outputMultipleShiftsText.setText(newText);}
 
 
     @Override
