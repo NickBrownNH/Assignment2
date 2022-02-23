@@ -40,7 +40,7 @@ public class HelloController implements Initializable {
 
         ShiftNCipher nC = new ShiftNCipher();
 
-        setOutputTextTwo(nC.ShiftNCipher(1,getInputTextTwo()));
+        setOutputTextTwo(nC.ShiftNCipher(Character.getNumericValue(getInputTextTwo().charAt(0)),getInputText()));
     }
 
     @FXML

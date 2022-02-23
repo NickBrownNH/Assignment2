@@ -5,14 +5,15 @@ public class ShiftNCipher implements Cipher{
 
     String ShiftNCipher (int shifts, String plainText) {
         String newText = plainText;
-        for (int i = 0; i <= shifts; i++) {
+        for (int i = 0; i < shifts; i++) {
             newText = encode(newText);
         }
         return newText;
     }
+
     public String encode(String plainText) {
 
-        int shiftDirection = -1;
+        int shiftDirection = 1;
 
         String newText = "";
         char[] newChar = new char[plainText.length()];
