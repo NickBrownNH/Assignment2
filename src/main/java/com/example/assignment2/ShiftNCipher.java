@@ -1,6 +1,6 @@
 package com.example.assignment2;
 
-public class ShiftNCipher implements Cipher{
+public class ShiftNCipher extends HelloController implements Cipher{
     int shiftDirection = 1;
 
     String ShiftNCipher (int shifts, String plainText) {
@@ -188,7 +188,7 @@ public class ShiftNCipher implements Cipher{
     }
 
 
-    private String shiftOnce (String text) {
+    protected String shiftOnce (String text) {
         return encode(text);
     }
 }

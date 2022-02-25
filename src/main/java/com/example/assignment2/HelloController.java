@@ -2,8 +2,10 @@ package com.example.assignment2;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 
@@ -11,6 +13,12 @@ import javafx.scene.text.Text;
 
 
 public class HelloController implements Initializable {
+
+    public String publicChoice = "";
+
+    @FXML
+    private ChoiceBox<String> myChoiceBox;
+
     @FXML
     public TextField inputText;
 
@@ -23,6 +31,9 @@ public class HelloController implements Initializable {
     @FXML
     public Text outputMultipleShiftsText;
 
+    public String[] choices = {"Shift Cipher", "Shuffle Cipher", "Unicode Sum Cipher"};
+
+
     @FXML
     protected void onTextTyped()  {
         System.out.println(inputText.getText());
@@ -30,7 +41,17 @@ public class HelloController implements Initializable {
 
         ShiftNCipher nC = new ShiftNCipher();
 
-        setOutputText(nC.encode(getInputText()));
+        if (publicChoice == "Shift Cipher") {
+            setOutputText(nC.shiftOnce(getInputText()));
+
+        } else if (publicChoice == "Shuffle Cipher") {
+
+        } else if (publicChoice == "Unicode Sum Cipher") {
+
+        } else {
+            setOutputText(nC.shiftOnce(getInputText()));
+        }
+
     }
 
     @FXML
@@ -64,8 +85,14 @@ public class HelloController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
+        myChoiceBox.getItems().addAll(choices);
+        myChoiceBox.setOnAction(this::getChoice);
     }
 
+    public void getChoice(ActionEvent event) {
+        String myChoice = myChoiceBox.getValue();
+        publicChoice = myChoice;
+        System.out.println(publicChoice);
+    }
 
 }
