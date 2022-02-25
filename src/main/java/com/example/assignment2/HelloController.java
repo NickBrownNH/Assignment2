@@ -40,11 +40,14 @@ public class HelloController implements Initializable {
        // outputOneShiftText.setText(inputText.getText());
 
         ShiftNCipher nC = new ShiftNCipher();
-
+        ShuffleNCipher fC = new ShuffleNCipher();
         if (publicChoice == "Shift Cipher") {
+
             setOutputText(nC.shiftOnce(getInputText()));
 
         } else if (publicChoice == "Shuffle Cipher") {
+
+            setOutputText(fC.shuffleOnce(getInputText()));
 
         } else if (publicChoice == "Unicode Sum Cipher") {
 
