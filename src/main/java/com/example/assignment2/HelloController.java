@@ -64,7 +64,20 @@ public class HelloController implements Initializable {
 
         ShiftNCipher nC = new ShiftNCipher();
 
-        setOutputTextTwo(nC.ShiftNCipher((Integer.parseInt(getInputTextTwo())),getInputText()));
+        ShuffleNCipher fC = new ShuffleNCipher();
+        if (publicChoice == "Shift Cipher") {
+
+            setOutputTextTwo(nC.ShiftNCipher((Integer.parseInt(getInputTextTwo())),getInputText()));
+        } else if (publicChoice == "Shuffle Cipher") {
+
+            setOutputTextTwo(fC.ShuffleNCipher((Integer.parseInt(getInputTextTwo())),getInputText()));
+
+        } else if (publicChoice == "Unicode Sum Cipher") {
+
+        } else {
+            setOutputTextTwo(nC.ShiftNCipher((Integer.parseInt(getInputTextTwo())),getInputText()));        }
+
+
     }
 
     @FXML
