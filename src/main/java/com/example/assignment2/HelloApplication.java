@@ -7,7 +7,16 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+/**
+ *
+ */
 public class HelloApplication extends Application implements Cipher {
+
+    /**
+     *
+     * @param stage
+     * @throws IOException
+     */
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
@@ -18,15 +27,19 @@ public class HelloApplication extends Application implements Cipher {
 
     }
 
+    /**
+     *
+     * @param args
+     */
     public static void main(String[] args) {
         launch();
-        int i = 0;
-        System.out.println(Character.isAlphabetic(';'));
-
-
-
     }
 
+    /**
+     *
+     * @param plainText
+     * @return
+     */
     @Override
     public String encode(String plainText) {
         return null;
