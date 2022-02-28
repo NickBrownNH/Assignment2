@@ -8,14 +8,17 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 /**
- *
+ * The HelloApplication Class sets up and launches the window
+ * and all the JavaFX connected to it.
  */
 public class HelloApplication extends Application {
 
     /**
+     * This method holds the code that sets up the FXML loader and scene.
+     * It also sets the window's size and title.
      *
-     * @param stage
-     * @throws IOException
+     * @param stage         is the variable that sets where the window should be projected to
+     * @throws IOException  if there is something that doesn't allow the window to run
      */
     @Override
     public void start(Stage stage) throws IOException {
@@ -28,17 +31,12 @@ public class HelloApplication extends Application {
     }
 
     /**
+     * The main method only stands to launch the window.
      *
-     * @param args
+     * @param args  is a basic variable placeholder that isn't used for any functionality
      */
     public static void main(String[] args) {
         launch();
     }
-
-    /**
-     *
-     * @param plainText
-     * @return
-     */
 
 }
