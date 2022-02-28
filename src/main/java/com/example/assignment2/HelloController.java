@@ -13,57 +13,50 @@ import javafx.scene.control.Button;
 
 
 /**
- *
+ * This class puts together all of the other classes and FXML code into one concise class,
+ * which allows the user to interact with the Cipher classes and their inputs.
  */
 public class HelloController implements Initializable {
 
-    //
     public String publicChoice = "";
 
-    //
     @FXML
     private ChoiceBox<String> myChoiceBox;
 
-    //
     @FXML
     private Button encodeOneShift;
 
-    //
     @FXML
     private Button encodeMultiShift;
 
-    //
     @FXML
     public TextField inputText;
 
-    //
     @FXML
     public Text outputOneShiftText;
 
-    //
     @FXML
     public TextField inputShifts;
 
-    //
     @FXML
     public Text outputMultipleShiftsText;
 
-    //
     public String[] choices = {"Shift Cipher", "Shuffle Cipher", "Unicode Sum Cipher",
                                 "Decode Shift Cipher", "Decode Shuffle Cipher", "Decode Unicode Sum Cipher"};
 
     /**
-     *
+     * This is a method that gets called when ever anyone presses enter after clicking
+     * on the Text Field inputText. It gets what cipher or cipher decoder was selected
+     * and then displays the translated text that was encoded or decoded once.
      */
     @FXML
     protected void onTextTyped()  {
-        //System.out.println(inputText.getText());
 
         ShiftNCipher nC = new ShiftNCipher();
 
         ShuffleNCipher fC = new ShuffleNCipher();
 
-        //
+        //gets the ChoiceBox's value and sets the encoding or decoding method to be printed out on screen
         if (publicChoice == "Shift Cipher") {
 
             setOutputText(nC.shiftOnce(getInputText()));
@@ -88,7 +81,7 @@ public class HelloController implements Initializable {
 
 
 
-        } else {
+        } else {    //If none are selected then it defaults to encoding by using the ShiftNCipher and displays it
 
             setOutputText(nC.shiftOnce(getInputText()));
 
@@ -97,23 +90,26 @@ public class HelloController implements Initializable {
     }
 
     /**
-     *
+     * This is the Event Handler for the top button that holds the method that gets what cipher or cipher
+     * decoder that was selected and then sets it so that the input gets translated into the desired text.
      */
     EventHandler<ActionEvent> eventTop = new EventHandler<ActionEvent>() {
+
         /**
+         * The handle method gets what cipher or cipher decoder was selected
+         * and then sets it so that the input gets translated into the desired text.
          *
-         * @param e
+         * @param e is the ActionEvent that is connected to the first encode button
          */
         public void handle(ActionEvent e)
         {
-            //System.out.println(inputText.getText());
 
             ShiftNCipher nC = new ShiftNCipher();
 
             ShuffleNCipher fC = new ShuffleNCipher();
 
 
-            //
+            //gets the ChoiceBox's value and sets the encoding or decoding method to be printed out on screen
             if (publicChoice == "Shift Cipher") {
 
                 setOutputText(nC.shiftOnce(getInputText()));
@@ -138,7 +134,7 @@ public class HelloController implements Initializable {
 
 
 
-            } else {
+            } else {    //If none are selected then it defaults to encoding by using the ShiftNCipher and displays it
 
                 setOutputText(nC.shiftOnce(getInputText()));
 
@@ -149,12 +145,16 @@ public class HelloController implements Initializable {
 
 
     /**
-     *
+     * This is the Event Handler for the bottom button that holds the method that gets what cipher or cipher
+     * decoder that was selected and then sets it so that the input gets translated into the desired text.
      */
     EventHandler<ActionEvent> eventBottom = new EventHandler<ActionEvent>() {
+
         /**
+         * The handle method gets what cipher or cipher decoder was selected
+         * and then sets it so that the input gets translated into the desired text.
          *
-         * @param e
+         * @param e is the ActionEvent that is connected to the second encode button
          */
         public void handle(ActionEvent e)
         {
@@ -163,7 +163,7 @@ public class HelloController implements Initializable {
 
             ShuffleNCipher fC = new ShuffleNCipher();
 
-            //
+            //gets the ChoiceBox's value and sets the encoding or decoding method to be printed out on screen
             if (publicChoice == "Shift Cipher") {
 
                 setOutputTextTwo(nC.ShiftNCipher((Integer.parseInt(getInputTextTwo())),getInputText(),true));
@@ -188,26 +188,29 @@ public class HelloController implements Initializable {
 
 
 
-            } else {
+            } else {    //If none are selected then it defaults to encoding by using the ShiftNCipher and displays it
 
-                setOutputTextTwo(nC.ShiftNCipher((Integer.parseInt(getInputTextTwo())),getInputText(),true));        }
+                setOutputTextTwo(nC.ShiftNCipher((Integer.parseInt(getInputTextTwo())),getInputText(),true));
+            }
 
         }
     };
 
     /**
-     *
+     * This is a method that gets called when ever anyone presses enter after clicking
+     * on the Text Field inputShifts. It gets what cipher or cipher decoder was selected
+     * and then displays the inputText that's been encoded or decoded the number of times
+     * that was specified in TextField inputShifts.
      */
     @FXML
     protected void onShiftsTyped()  {
-        //System.out.println(inputShifts.getText());
 
         ShiftNCipher nC = new ShiftNCipher();
 
         ShuffleNCipher fC = new ShuffleNCipher();
 
 
-        //
+        //gets the ChoiceBox's value and sets the encoding or decoding method to be printed out on screen
         if (publicChoice == "Shift Cipher") {
 
             setOutputTextTwo(nC.ShiftNCipher((Integer.parseInt(getInputTextTwo())),getInputText(),true));
@@ -232,7 +235,7 @@ public class HelloController implements Initializable {
 
 
 
-        } else {
+        } else {    //If none are selected then it defaults to encoding by using the ShiftNCipher and displays it
 
             setOutputTextTwo(nC.ShiftNCipher((Integer.parseInt(getInputTextTwo())),getInputText(),true));
 
@@ -241,8 +244,9 @@ public class HelloController implements Initializable {
 
 
     /**
+     * This method gets the text that has been typed in the first textField.
      *
-     * @return
+     * @return  the text that has been typed in TextField inputText
      */
     @FXML
     public String getInputText() {
@@ -250,8 +254,9 @@ public class HelloController implements Initializable {
     }
 
     /**
+     * This method gets the text that has been typed in the second textField.
      *
-     * @return
+     * @return  the text that has been typed in the TextField inputShifts
      */
     @FXML
     public String getInputTextTwo() {
@@ -259,8 +264,10 @@ public class HelloController implements Initializable {
     }
 
     /**
+     * This method takes the newText and displays it on the first text object
+     * that displays the once encoded or decoded string.
      *
-     * @param newText
+     * @param newText   is a variable that holds the new translated text
      */
     @FXML
     public void setOutputText(String newText) {
@@ -268,16 +275,21 @@ public class HelloController implements Initializable {
     }
 
     /**
+     * This method takes the newText and displays it on the second text object
+     * that displays the string that has been encoded or decoded a number of times
+     * defined by the user.
      *
-     * @param newText
+     * @param newText   is a variable that holds the new translated text
      */
     @FXML
     public void setOutputTextTwo (String newText) { outputMultipleShiftsText.setText(newText);}
 
     /**
+     * This method is here to Initialize some basic stuff for the JavaFX portion
+     * of this project. This just consists of setting up the ChoiceBox.
      *
-     * @param url
-     * @param resourceBundle
+     * @param url               This is a basic variable that initialize uses, but I don't know what for
+     * @param resourceBundle    This is a basic variable that initialize uses, but I don't know what for
      */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -288,13 +300,15 @@ public class HelloController implements Initializable {
     }
 
     /**
+     * The getChoice method gets the choice selected in the choice box and sets the
+     * publicChoice variable equal to the ChoiceBox value.
      *
-     * @param event
+     * @param event is the ActionEvent that is connected to the ChoiceBox and activates when a
+     *              choice has been selected.
      */
     public void getChoice(ActionEvent event) {
         String myChoice = myChoiceBox.getValue();
         publicChoice = myChoice;
-        //System.out.println(publicChoice);
     }
 
 }

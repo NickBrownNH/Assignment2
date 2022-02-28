@@ -10,7 +10,7 @@ import java.io.IOException;
 /**
  *
  */
-public class HelloApplication extends Application implements Cipher {
+public class HelloApplication extends Application {
 
     /**
      *
@@ -40,8 +40,5 @@ public class HelloApplication extends Application implements Cipher {
      * @param plainText
      * @return
      */
-    @Override
-    public String encode(String plainText) {
-        return null;
-    }
+
 }

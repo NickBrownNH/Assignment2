@@ -3,8 +3,14 @@ package com.example.assignment2;
 /**
  *
  */
-public class ShuffleNCipher extends HelloController implements Cipher{
-
+public class ShuffleNCipher implements Cipher{
+    /**
+     *
+     * @param shuffles
+     * @param plainText
+     * @param enc
+     * @return
+     */
     String ShuffleNCipher (int shuffles, String plainText, boolean enc) {
         String newText = plainText;
 
@@ -22,6 +28,11 @@ public class ShuffleNCipher extends HelloController implements Cipher{
 
     }
 
+    /**
+     *
+     * @param plainText
+     * @return
+     */
     public String encode(String plainText) {
 
         String newText = "";

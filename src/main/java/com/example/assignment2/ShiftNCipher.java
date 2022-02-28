@@ -13,7 +13,7 @@ package com.example.assignment2;
  *      a -> z
  *      -1 shift
  */
-public class ShiftNCipher extends HelloController implements Cipher{
+public class ShiftNCipher implements Cipher{
 
     /**
      * This constructor takes in how many shifts should be preformed, the inputted string, and weather the string
