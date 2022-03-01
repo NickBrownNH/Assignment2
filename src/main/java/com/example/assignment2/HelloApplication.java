@@ -8,6 +8,10 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 /**
+ * @author Nick Brown
+ * @date 2/28/2022
+ *
+ *
  * The HelloApplication Class sets up and launches the window
  * and all the JavaFX connected to it.
  */

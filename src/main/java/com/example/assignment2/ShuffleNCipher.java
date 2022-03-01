@@ -1,6 +1,9 @@
 package com.example.assignment2;
 
 /**
+ * @author Nick Brown
+ * @date 2/28/2022
+ *
  * The ShuffleNCipher class has methods and constructors that work to transform an input text
  * and to return a string that has its characters shuffled around a number of times.
  *
@@ -15,6 +18,7 @@ package com.example.assignment2;
  *
  */
 public class ShuffleNCipher implements Cipher {
+    int shuffles = 1;
 
     /**
      * This constructor takes in how many shuffles should be preformed, the inputted string, and weather the string
@@ -46,6 +50,63 @@ public class ShuffleNCipher implements Cipher {
 
     }
 
+
+    /**
+     * This constructor takes in how many shuffles should be preformed.
+     * This preforms the encoded or decode method which returns the shifted version of the original string.
+     *
+     * @param shuffles  the variable that states how many times the original string needs to be encoded or decoded
+     * @return          the encoded or decoded string which has been preformed a number of times defined under the shuffles variable
+     */
+    String ShuffleNCipher (int shuffles) {
+        String newText = "plainText";
+        boolean enc = true;
+
+        //Checks if given value should be encoded or decoded
+        if (enc) {
+            //Encodes the plain text the number of times defined in the variable shuffles
+            for (int i = 0; i < Math.abs(shuffles); i++)
+                newText = encode(newText);
+
+            return newText;
+        } else {
+            //Decodes the plain text the number of times defined in the variable shifts
+            for (int i = 0; i < Math.abs(shuffles); i++)
+                newText = decode(newText);
+
+            return newText;
+        }
+
+    }
+
+    /**
+     * This preforms the encoded or decode method which returns the shifted version of the original string.
+     *
+     * @return  the encoded or decoded string which has been preformed a number of times defined under the shuffles variable
+     */
+    String ShuffleNCipher () {
+        shuffles = (int)Math.random()*10;
+        String newText = "plainText";
+        boolean enc = true;
+
+        //Checks if given value should be encoded or decoded
+        if (enc) {
+            //Encodes the plain text the number of times defined in the variable shuffles
+            for (int i = 0; i < Math.abs(shuffles); i++)
+                newText = encode(newText);
+
+            return newText;
+        } else {
+            //Decodes the plain text the number of times defined in the variable shifts
+            for (int i = 0; i < Math.abs(shuffles); i++)
+                newText = decode(newText);
+
+            return newText;
+        }
+
+    }
+
+
     /**
      * This method takes in the plainText and shuffles the characters by splitting up the string in
      * half and merging the two halves together and then return the new shuffled string.
@@ -71,10 +132,18 @@ public class ShuffleNCipher implements Cipher {
 
             for (int i = 0; i < plainText.length(); i++) {
 
-                if (i < firstHalf.length) { //sets the first half of the string to the character array firstHalf
+                if (i < firstHalf.length && plainText.length()%2 != 0) { //sets the first half of the string to the character array firstHalf
                     firstHalf[i] = plainText.charAt(i);
 
-                } else if (i >= firstHalf.length) { //sets the second half of the string to the character array secondHalf
+                } else if (i >= firstHalf.length && plainText.length()%2 != 0) { //sets the second half of the string to the character array secondHalf
+                    secondHalf[x] = plainText.charAt(i);
+                    x++;
+                }
+
+                if (i < firstHalf.length-1 && plainText.length()%2 == 0) { //sets the first half of the string to the character array firstHalf
+                    firstHalf[i] = plainText.charAt(i);
+
+                } else if (i >= firstHalf.length-1 && plainText.length()%2 == 0) { //sets the second half of the string to the character array secondHalf
                     secondHalf[x] = plainText.charAt(i);
                     x++;
                 }
@@ -87,7 +156,7 @@ public class ShuffleNCipher implements Cipher {
                 if (i%2 == 0) { //sets the new character equal to first half at j when i is even
                     newChar[i] = firstHalf[j];
                     j++;
-                } else if (i%2 != 0) {  //sets the new character equal to second half at j when i is odd
+                } else {  //sets the new character equal to second half at j when i is odd
                     newChar[i] = secondHalf[y];
                     y++;
                 }
@@ -98,6 +167,8 @@ public class ShuffleNCipher implements Cipher {
 
         return newText;
     }
+
+
 
     /**
      * This method takes in the encodedText and shuffles the characters by splitting up the string in

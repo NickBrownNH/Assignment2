@@ -13,6 +13,9 @@ import javafx.scene.control.Button;
 
 
 /**
+ * @author Nick Brown
+ * @date 2/28/2022
+ *
  * This class puts together all of the other classes and FXML code into one concise class,
  * which allows the user to interact with the Cipher classes and their inputs.
  */
@@ -41,8 +44,7 @@ public class HelloController implements Initializable {
     @FXML
     public Text outputMultipleShiftsText;
 
-    public String[] choices = {"Shift Cipher", "Shuffle Cipher", "Unicode Sum Cipher",
-                                "Decode Shift Cipher", "Decode Shuffle Cipher", "Decode Unicode Sum Cipher"};
+    public String[] choices = {"Shift Cipher", "Shuffle Cipher", "Decode Shift Cipher", "Decode Shuffle Cipher"};
 
     /**
      * This is a method that gets called when ever anyone presses enter after clicking
@@ -65,21 +67,13 @@ public class HelloController implements Initializable {
 
             setOutputText(fC.shuffleOnce(getInputText()));
 
-        } else if (publicChoice == "Unicode Sum Cipher") {
-
-
-
-        } else if (publicChoice == "Decode Shift Cipher") {
+        }  else if (publicChoice == "Decode Shift Cipher") {
 
             setOutputText(nC.decodeOnce(getInputText()));
 
         } else if (publicChoice == "Decode Shuffle Cipher") {
 
             setOutputText(fC.decodeOnce(getInputText()));
-
-        } else if (publicChoice == "Decode Unicode Sum Cipher") {
-
-
 
         } else {    //If none are selected then it defaults to encoding by using the ShiftNCipher and displays it
 
@@ -118,21 +112,13 @@ public class HelloController implements Initializable {
 
                 setOutputText(fC.shuffleOnce(getInputText()));
 
-            } else if (publicChoice == "Unicode Sum Cipher") {
-
-
-
-            } else if (publicChoice == "Decode Shift Cipher") {
+            }  else if (publicChoice == "Decode Shift Cipher") {
 
                 setOutputText(nC.decodeOnce(getInputText()));
 
             } else if (publicChoice == "Decode Shuffle Cipher") {
 
                 setOutputText(fC.decodeOnce(getInputText()));
-
-            } else if (publicChoice == "Decode Unicode Sum Cipher") {
-
-
 
             } else {    //If none are selected then it defaults to encoding by using the ShiftNCipher and displays it
 
@@ -172,10 +158,6 @@ public class HelloController implements Initializable {
 
                 setOutputTextTwo(fC.ShuffleNCipher((Integer.parseInt(getInputTextTwo())),getInputText(),true));
 
-            } else if (publicChoice == "Unicode Sum Cipher") {
-
-
-
             } else if (publicChoice == "Decode Shift Cipher") {
 
                 setOutputTextTwo(nC.ShiftNCipher((Integer.parseInt(getInputTextTwo())),getInputText(),false));
@@ -183,10 +165,6 @@ public class HelloController implements Initializable {
             } else if (publicChoice == "Decode Shuffle Cipher") {
 
                 setOutputTextTwo(fC.ShuffleNCipher((Integer.parseInt(getInputTextTwo())),getInputText(),false));
-
-            } else if (publicChoice == "Decode Unicode Sum Cipher") {
-
-
 
             } else {    //If none are selected then it defaults to encoding by using the ShiftNCipher and displays it
 
@@ -219,10 +197,6 @@ public class HelloController implements Initializable {
 
             setOutputTextTwo(fC.ShuffleNCipher((Integer.parseInt(getInputTextTwo())),getInputText(), true));
 
-        } else if (publicChoice == "Unicode Sum Cipher") {
-
-
-
         } else if (publicChoice == "Decode Shift Cipher") {
 
             setOutputTextTwo(nC.ShiftNCipher((Integer.parseInt(getInputTextTwo())),getInputText(),false));
@@ -230,10 +204,6 @@ public class HelloController implements Initializable {
         } else if (publicChoice == "Decode Shuffle Cipher") {
 
             setOutputTextTwo(fC.ShuffleNCipher((Integer.parseInt(getInputTextTwo())),getInputText(),false));
-
-        } else if (publicChoice == "Decode Unicode Sum Cipher") {
-
-
 
         } else {    //If none are selected then it defaults to encoding by using the ShiftNCipher and displays it
 

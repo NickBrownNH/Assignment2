@@ -1,6 +1,10 @@
 package com.example.assignment2;
 
 /**
+ * @author Nick Brown
+ * @date 2/28/2022
+ *
+ *
  * The ShiftNCipher class has methods and constructors that work to transform an input text
  * and to return a string that has its characters shifted a number of times.
  *
