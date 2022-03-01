@@ -205,16 +205,32 @@ public class ShuffleNCipher implements Cipher {
 
         }
 
-        for (int i = 0; i < plainText.length()+1; i++) {
 
-            if (i < firstHalf.length) {     //sets the newString to the newString plus the firstHalf characters
+        for (int i = 0; i < plainText.length(); i++) {
+
+            if (i < firstHalf.length && plainText.length()%2 != 0) { //sets the first half of the string to the character array firstHalf
                 newText = newText + firstHalf[i];
-            } else {    //sets the newString to the newString plus the secondHalf characters
+
+            } else if (i >= firstHalf.length && plainText.length()%2 != 0) { //sets the second half of the string to the character array secondHalf
+                newText = newText + secondHalf[x];
+                x++;
+            }
+
+            if (i < firstHalf.length-1 && plainText.length()%2 == 0) { //sets the first half of the string to the character array firstHalf
+                newText = newText + firstHalf[i];
+
+            } else if (i >= firstHalf.length-1 && plainText.length()%2 == 0) { //sets the second half of the string to the character array secondHalf
                 newText = newText + secondHalf[x];
                 x++;
             }
 
         }
+
+
+
+
+
+
 
 
         return newText;

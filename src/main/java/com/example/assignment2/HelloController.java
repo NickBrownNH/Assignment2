@@ -18,6 +18,79 @@ import javafx.scene.control.Button;
  *
  * This class puts together all of the other classes and FXML code into one concise class,
  * which allows the user to interact with the Cipher classes and their inputs.
+ *
+ *
+ * Expected Values For All Testing
+ *
+ * 1 shift:
+ *
+ * Aibohphobia   --->   Bjcpiqipcjb
+ * Hello, World!!   --->   Ifmmp, Xpsme!!
+ * Was it a cat I saw?   --->   Xbt ju b dbu J tbx?
+ * A man, a plan, a cat, a ham, a yak, a yam, a hat, a canal-Panama!   --->
+ *
+ *
+ * 3 shifts:
+ *
+ * Aibohphobia   --->   Dlerkskreld
+ * Hello, World!!   --->   Khoor, Zruog!!
+ * Was it a cat I saw?   --->   Zdv lw d fdw L vdz?
+ * A man, a plan, a cat, a ham, a yak, a yam, a hat, a canal-Panama!   --->
+ *
+ *
+ * 6 shifts:
+ *
+ * Aibohphobia   --->   Gohunvnuhog
+ * Hello, World!!   --->   Nkrru, Cuxrj!!
+ * Was it a cat I saw?   --->   Cgy oz g igz O ygc?
+ * A man, a plan, a cat, a ham, a yak, a yam, a hat, a canal-Panama!   --->
+ *
+ *
+ * -2 shifts:
+ *
+ * Aibohphobia   --->  Ygzmfnfmzgy
+ * Hello, World!!   --->   Fcjjm, Umpjb!!
+ * Was it a cat I saw?   --->   Uyq gr y ayr G qyu?
+ * A man, a plan, a cat, a ham, a yak, a yam, a hat, a canal-Panama!   --->
+ *
+ *
+ *
+ *
+ * 1 shuffle:
+ *
+ * Aibohphobia   --->   Ahiobboihap
+ * Hello, World!!   --->   HWeolrllod,! !
+ * Was it a cat I saw?   --->   Waats  li ts aaw ?c
+ * A man, a plan, a cat, a ham, a yak, a yam, a hat, a canal-Panama!   --->
+ *
+ *
+ * 3 shuffles:
+ *
+ * Aibohphobia   --->   Aooahbipibh
+ * Hello, World!!   --->   H,llW!ore dlo!
+ * Was it a cat I saw?   --->   W twa s al ?tiacs a
+ * A man, a plan, a cat, a ham, a yak, a yam, a hat, a canal-Panama!   --->
+ *
+ *
+ * 6 shuffles:
+ *
+ * Aibohphobia   --->   Apahiobboih
+ * Hello, World!!   --->   H!dlroW ,olle
+ * Was it a cat I saw?   --->   Wt   wca isa?aslta
+ * A man, a plan, a cat, a ham, a yak, a yam, a hat, a canal-Panama!   --->
+ *
+ *
+ * -2 shuffles:
+ *
+ * Aibohphobia   --->   Aohiihoabpb
+ * Hello, World!!   --->   HlWoedo,l!r l!
+ * Was it a cat I saw?   --->   Wtasa tasa w  l?ic
+ * A man, a plan, a cat, a ham, a yak, a yam, a hat, a canal-Panama!   --->
+ *
+ *
+ *
+ *
+ *
  */
 public class HelloController implements Initializable {
 
