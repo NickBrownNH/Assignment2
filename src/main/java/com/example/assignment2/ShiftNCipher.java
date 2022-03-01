@@ -15,10 +15,12 @@ package com.example.assignment2;
  */
 public class ShiftNCipher implements Cipher{
 
+    int shifts = 1;
+
     /**
      * This constructor takes in how many shifts should be preformed, the inputted string, and weather the string
      * should be encoded or decoded and returns a string that is either encoded or decoded an x number of times.
-     * This preforms the encode method which returns the shifted version of the original string.
+     * This preforms the encode or decode method which returns the shifted version of the original string.
      *
      * @param shifts    the variable that states how many times the original string needs to be encoded or decoded
      * @param plainText the variable that holds the original text given
@@ -43,6 +45,62 @@ public class ShiftNCipher implements Cipher{
             return newText;
         }
     }
+
+
+    /**
+     * This constructor takes in how many shifts should be preformed.
+     * This preforms the encode or decode method which returns the shifted version of the original string.
+     *
+     * @param shifts    the variable that states how many times the original string needs to be encoded or decoded
+     * @return          the encoded or decoded string which has been preformed a number of times defined under the shifts variable
+     */
+    String ShiftNCipher (int shifts) {
+        String newText = "";
+        boolean enc = true;
+
+        //Checks if given value should be encoded or decoded
+        if (enc) {
+            //Encodes the plain text the number of times defined in the variable shifts
+            for (int i = 0; i < Math.abs(shifts); i++)
+                newText = encode(newText, shifts);
+
+            return newText;
+        } else {
+            //Decodes the plain text the number of times defined in the variable shifts
+            for (int i = 0; i < Math.abs(shifts); i++)
+                newText = decode(newText, shifts);
+
+            return newText;
+        }
+    }
+
+    /**
+     * This preforms the encode or decode method which returns the shifted version of the original string.
+     *
+     * @return  the encoded or decoded string which has been preformed a number of times defined under the shifts variable
+     */
+    String ShiftNCipher () {
+
+        shifts = (int)Math.random()*10;
+        String newText = "Test String :)";
+        boolean enc = true;
+
+        //Checks if given value should be encoded or decoded
+        if (enc) {
+            //Encodes the plain text the number of times defined in the variable shifts
+            for (int i = 0; i < Math.abs(shifts); i++)
+                newText = encode(newText, shifts);
+
+            return newText;
+        } else {
+            //Decodes the plain text the number of times defined in the variable shifts
+            for (int i = 0; i < Math.abs(shifts); i++)
+                newText = decode(newText, shifts);
+
+            return newText;
+        }
+    }
+
 
     /**
      * This method takes in the plainText and shifts the characters once in the positive direction and then
